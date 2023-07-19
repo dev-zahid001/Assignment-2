@@ -2,6 +2,10 @@
   font-family: 'Work Sans', sans-serif;
   margin: 0%;
 }
+.fix-width{
+  width: 1300px;
+  margin: auto;
+}
 .btn-primary{
  color: #FFF;
 font-size: 20px;
@@ -24,79 +28,117 @@ background: #4EC5F7;
 }
 /* header style */
 header{
-  background: #FFF;
-  box-shadow: #FFF;
-box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  box-shadow: 1px 10px 10px #e3e3e342;
+  position: sticky;
+  top: 0px;
 }
-nav{
+.nav-menu{
   display: flex;
   justify-content: space-between;
 }
 nav > ul{
   display: flex;
-  
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 nav li{
-  list-style: none;
-  color: #3C354F;
-  margin: 40px;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 500;
+  margin-left: 30px;
+  display: inline-block;
 }
 nav li a{
+  color: var(--black);
+  padding: 30px 30px;
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: 8px;
   text-decoration: none;
 }
 
 .nav-logo{
   display: flex;
-
+  align-items: center;
 }
+
+
 .nav-logo .nav-title{
-text-align: center;
-font-size: 45px;
-font-weight: 700;
+  margin-left: 10px;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--black);
 }
 .nav-logo .nav-title span{
   color: #FF42A5;
 }
 /* banner style */
-section{
-  background: #fcf6fc;
-  margin-top: 20px;
-  
-}
+
 .banner{
-  display: flex;
-  justify-content: space-around;
+  background-image: url(../images/Group\ 14.png);
+  background-repeat: no-repeat;
+    background-size: auto;
+    padding: 50px 0px;
+}
+.banner-content{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
 }
 .banner-title{
-  margin-top: 80px;
+ 
 }
 .banner-title h3{
-color: #0B0223;
-text-align: center;
-font-size: 48px;
-font-weight: 600;
-text-transform: uppercase;
+  color: var(--black);
+    font-size: 48px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
-.banner-title h1{
+.heading{
+  color: #F948B2;
 font-size: 95px;
 font-weight: 800;
 text-transform: uppercase;
-color:#cc4ecb;
-margin-top: 10px;
 }
-.banner-title li{
-color: #534C64;
-font-size: 1rem;
-font-weight: 500;
-margin-top: 10px;
+.banner-img{
+  margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+img{
+  max-width: 100%;
+}
+.banner-img span{
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 10px;
 }
 .btn{
-  margin-top: 20px;
+  margin-bottom: 30px;
 }
-
+.primary-btn{
+  background-color:#F948B2;
+    padding: 15px 40px;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFF;
+    cursor: pointer;
+}
+.secondary-btn{
+  background-color:#4EC5F7;;
+  padding: 15px 40px;
+  border-radius: 50px;
+  border: 1px solid transparent;
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFF;
+  cursor: pointer;
+}
+.banner-right{
+  text-align: end;
+}
 /* funny style */
 .funny{
   background: #fff;
@@ -120,15 +162,36 @@ font-weight: 400;
 padding-bottom: 20px;
 }
 .fuuny-container{
-  display: flex;
-  justify-content: space-around;
-  gap: 30px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
-.fuuny-container .card{
-  border-radius: 8px;
-  text-align: center;
+.card{
+ 
+  position: relative;
   
 }
+.hover-card:hover{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 90%;
+  width: 100%;
+  border-radius: 15px;
+  background: #00000073;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s all ease-in-out;
+}
+.hover-card .box{
+  color: #F948B2;
+}
+
 .fuuny-container .card .card-title{
 color: #534C64;
 font-size: 20px;
@@ -178,6 +241,7 @@ line-height: 30px;
 /* list style  */
 .list{
   margin-top: 100px;
+  padding: 50px 0;
 }
 .list-container{
   display: flex;
@@ -263,4 +327,12 @@ font-weight: 500;
   text-align: center;
   font-size: 16px;
   font-weight: 500;
+}
+
+/* mobile responsive */
+@media screen and (max-width: 576px){
+  .nav-menu,
+  .banner{
+    flex-direction: column;
+  }
 }
