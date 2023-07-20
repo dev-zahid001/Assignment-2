@@ -63,7 +63,7 @@ nav li a{
 }
 .nav-menu ul li:last-child a{
   background:rgba(11, 2, 35, 0.1);
-  padding:15px 50px;
+  padding:15px 20px;
   margin-top: 15px;
 
 }
@@ -184,7 +184,11 @@ padding-bottom: 20px;
   position: relative;
   
 }
-.hover-card:hover{
+.hover-card{
+  visibility: hidden;
+  opacity: none;
+}
+/* .hover-card:hover{
   position: absolute;
   top: 0px;
   left: 0px;
@@ -196,10 +200,27 @@ padding-bottom: 20px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s all ease-in-out;
+} */
+.card:hover > .hover-card{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 70%;
+  width: 100%;
+  border-radius: 15px;
+  background: #00000073;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 1;
+  visibility: visible;
   transition: 0.3s all ease-in-out;
 }
+
 .hover-card .box{
   color: #F948B2;
 }
@@ -259,14 +280,21 @@ padding: 20px 0;
   padding: 120px 0px;
   background: linear-gradient( 90deg, rgba(255, 66, 165, 0.03) 0%, rgba(255, 66, 165, 0.03) 100% );
 }
-.list-type{
+/* .list-type{
   display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(5, 1fr);
-    justify-content: center;
+  grid-gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+} */
+.list-type{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 .list-box{
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 10px;
   background-color: #FFF;
@@ -362,23 +390,29 @@ footer{
 }
 /* mobile responsive */
 @media screen and (max-width: 576px){
-  .nav-menu,
-  .nav-logo,
-  .nav-menu ul li,
-  .banner-content,
-  .fuuny-container
-  {
-    flex-direction: column;
-    grid-template-columns: 1fr;
-  
-  }
-  .nav-menu,
-  .funny-container{
-    align-items: center;
-    position: static;
-  }
-  .banner-content{
-    padding: 50px 30px !important;
-    background-size: cover !important;
-  }
+  /* header responsive */
+  .fixed-width {
+    width: 100% !important;
+}
+/* .nav-menu li{
+  margin-left: 0px !important;
+} */
+/* .nav-menu li a{
+  padding: 10px !important;
+} */
+.nav-menu{
+  flex-direction: column;
+  margin-top: 10px !important;
+  text-align: center;
+
+}
+/* banner sectionj */
+.banner{
+  padding: 50px 30px !important;
+  background-size: cover !important;
+}
+.banner-content{
+  flex-direction: column-reverse;
+    text-align: center !important;
+}
 }
